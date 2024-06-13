@@ -1,0 +1,84 @@
+---
+import SectionContainer from "../../components/footer/SectionContainer.astro";
+import Mechanic from "../icons/speciality/mechanic.astro";
+import Electronic from "../icons/speciality/electronics.astro";
+import Informatic from "../icons/speciality/informatic.astro";
+import General from "../icons/speciality/generalSciences.astro"
+
+const TAGS = {
+    ELECTRONIC: {
+        class: "text-[#1A52E6]",
+        icon: Electronic,
+    },
+    MECHANIC: {
+        class: "text-[#1A52E6]",
+        icon: Mechanic,
+    },
+    INFORMATIC: {
+        class: "text-[#1A52E6]",
+        icon: Informatic,
+    },
+    GENERAL: {
+        class: "text-[#1A52E6]",
+        icon: General,
+    },
+};
+
+const SPECIALITY = [
+    {
+        title: "Electricidad",
+        icon: [TAGS.ELECTRONIC],
+        content:
+            "Instalar y mantener sistemas eléctricos, incluyendo cableado, iluminación y maquinaria, cumpliendo con los estándares de calidad, seguridad y normativas ambientales en diversos entornos de edificaciones.",
+    },
+    {
+        title: "Electromecánica Automotriz",
+        icon: [TAGS.MECHANIC],
+        content:
+            "Realizar la instalación y mantenimiento de sistemas electrónicos automotrices, incluyendo diagnóstico, control, inyección y encendido, cumpliendo con los estándares de calidad, seguridad y ambientales en diversos vehículos modernos.",
+    },
+    {
+        title: "Electrónica",
+        icon: [TAGS.ELECTRONIC],
+        content:
+            "Realizar la instalación y mantenimiento de sistemas electrónicos, abarcando dispositivos de control, comunicación y automatización, cumpliendo con estándares de calidad, seguridad y normativas ambientales en diversas aplicaciones.",
+    },
+    {
+        title: "Informática",
+        icon: [TAGS.INFORMATIC],
+        content:
+            "Optimizar el tratamiento de la información mediante el procesamiento automático, utilizando lenguajes de programación, bases de datos, herramientas ofimáticas, redes informáticas, herramientas web, sistemas operativos y soporte técnico; proponiendo soluciones.",
+    },
+    {
+        title: "Comercialización y Ventas",
+        icon: [TAGS.ELECTRONIC],
+        content:
+            "Ejecutar operaciones de almacenamiento y expedición de mercaderías, desarrollo del proceso de venta de productos y/o servicios y la aplicación de técnicas de animación en el punto de venta, utilizando la normativa vigente y herramientas tecnológicas con eficiencia y responsabilidad social.",
+    },
+    {
+        title: "Ciencias Generales",
+        icon: [TAGS.GENERAL],
+        content:
+            "Ofrece una formación en áreas científico-humanísticas, mediante las asignaturas del tronco común, y podrán tener componentes y menciones específicas y especializadas. ",
+    },
+];
+---
+
+<SectionContainer
+    class="grid gap-x-10 gap-y-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-16"
+>
+    {
+        SPECIALITY.map(({ title, icon, content }) => (
+            <div class=" text-blue-600 text-left block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-200 ">
+                {icon.map((tag) => (
+                    <tag.icon class="mb-4 w-10 h-10 my-2" />
+                ))}
+                <h3 class="text-xl mb-2 font-medium text-black">{title}</h3>
+                <p class="font-normal text-gray-700 dark:text-gray-400">
+                    {content}
+                </p>
+            </div>
+        ))
+    }
+    <SectionContainer />
+</SectionContainer>
