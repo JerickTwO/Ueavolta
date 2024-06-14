@@ -4,6 +4,8 @@ import Mechanic from "../icons/speciality/mechanic.astro";
 import Electronic from "../icons/speciality/electronics.astro";
 import Informatic from "../icons/speciality/informatic.astro";
 import General from "../icons/speciality/generalSciences.astro"
+import Electricity from "../icons/speciality/Electricity.astro";
+import Sell from "../icons/speciality/Sell.astro";
 
 const TAGS = {
     ELECTRONIC: {
@@ -22,12 +24,20 @@ const TAGS = {
         class: "text-[#1A52E6]",
         icon: General,
     },
+    ELECTRICITY: {
+        class: "text-[#1A52E6]",
+        icon: Electricity,
+    },
+    SELL: {
+        class: "text-[#1A52E6]",
+        icon: Sell,
+    },
 };
 
 const SPECIALITY = [
     {
         title: "Electricidad",
-        icon: [TAGS.ELECTRONIC],
+        icon: [TAGS.ELECTRICITY],
         content:
             "Instalar y mantener sistemas eléctricos, incluyendo cableado, iluminación y maquinaria, cumpliendo con los estándares de calidad, seguridad y normativas ambientales en diversos entornos de edificaciones.",
     },
@@ -51,7 +61,7 @@ const SPECIALITY = [
     },
     {
         title: "Comercialización y Ventas",
-        icon: [TAGS.ELECTRONIC],
+        icon: [TAGS.SELL],
         content:
             "Ejecutar operaciones de almacenamiento y expedición de mercaderías, desarrollo del proceso de venta de productos y/o servicios y la aplicación de técnicas de animación en el punto de venta, utilizando la normativa vigente y herramientas tecnológicas con eficiencia y responsabilidad social.",
     },

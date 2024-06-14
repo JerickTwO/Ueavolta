@@ -1,0 +1,134 @@
+---
+const data = [
+    {
+        title: "Cámaras avanzadas",
+        content: "Toma selfies.Haz películas.Crea sin límites.",
+        img: "https://via.placeholder.com/400x600",
+    },
+    {
+        title: "Chips de Apple",
+        content: "Siente la velocidad.",
+        img: "https://via.placeholder.com/400x600",
+    },
+    {
+        title: "Batería",
+        content: "Larga vida a la batería.",
+        img: "https://via.placeholder.com/400x600",
+    },
+    {
+        title: "Innovación",
+        content: "Diseñado para durar.Y enamorar.",
+        img: "https://via.placeholder.com/400x600",
+    },
+    {
+        title: "Innovación",
+        content: "Diseñado para durar.Y enamorar.",
+        img: "https://via.placeholder.com/400x600",
+    },
+    {
+        title: "Cámaras avanzadas",
+        content: "Toma selfies.Haz películas.Crea sin límites.",
+        img: "https://via.placeholder.com/400x600",
+    },
+    {
+        title: "Chips de Apple",
+        content: "Siente la velocidad.",
+        img: "https://via.placeholder.com/400x600",
+    },
+    {
+        title: "Batería",
+        content: "Larga vida a la batería.",
+        img: "https://via.placeholder.com/400x600",
+    },
+];
+---
+
+<style>
+    .carousel-container {
+        scroll-behavior: smooth;
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+    .carousel-container::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, and Opera */
+    }
+</style>
+
+<div id="carousel" class="relative w-full max-w-4xl mx-auto overflow-hidden">
+    <button
+        id="prevButton"
+        class="absolute left-2 top-1/2 transform -translate-y-1/2 p-2 bg-gray-800 rounded-full shadow-lg z-10"
+    >
+        <svg
+            class="w-6 h-6 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 19l-7-7 7-7"></path>
+        </svg>
+    </button>
+
+    <div
+        class="carousel-container flex space-x-4 overflow-hidden scroll-smooth w-full"
+    >
+        {
+            data.map(({ title, content, img }) => (
+                <div
+                    class="feature-card bg-gray-800 rounded-lg shadow-lg min-w-[250px] max-w-xs"
+                    {title}
+                >
+                    <img
+                        src={img}
+                        alt={title}
+                        class="w-full h-auto object-cover rounded-t-lg"
+                    />
+                    <div class="p-4">
+                        <h2 class="text-white font-semibold">{title}</h2>
+                        <p class="text-white text-lg">{content}</p>
+                    </div>
+                </div>
+            ))
+        }
+    </div>
+
+    <button
+        id="nextButton"
+        class="absolute right-2 top-1/2 transform -translate-y-1/2 p-2 bg-gray-800 rounded-full shadow-lg z-10"
+    >
+        <svg
+            class="w-6 h-6 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"></path>
+        </svg>
+    </button>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const prevButton = document.getElementById("prevButton");
+        const nextButton = document.getElementById("nextButton");
+        const carouselContainer = document.querySelector(".carousel-container");
+
+        prevButton.addEventListener("click", () => {
+            carouselContainer.scrollLeft -= 250; // Ajusta ancho de tarjetas
+        });
+
+        nextButton.addEventListener("click", () => {
+            carouselContainer.scrollLeft += 250; // Ajustar ancho de tarjetas
+        });
+    });
+</script>
