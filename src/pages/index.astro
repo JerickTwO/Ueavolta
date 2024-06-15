@@ -1,24 +1,23 @@
 ---
-import Card from "../components/card/card.astro"
-import CardCarousel from "../components/card/cardCarousel.astro"
-import Footer from "../components/footer/Footer.astro"
-import Navbar from "../components/navbar/navbar.astro"
+import Card from "@/main/Card.astro"
+import CardCarousel from "@/main/cardCarousel.astro"
+import Accordion from "@/main/Accordion.astro"
+import Footer from "@/Footer.astro"
+import Navbar from "@/navbar.astro"
+
+import Layout from '../layouts/Layout.astro';
 
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body class="dark:bg-gray-900 mt-8 mb-2 flex w-full items-center justify-center flex-col">
+<Layout title="Welcome to Astro.">
+	<main>
+		
 		<Navbar/>
 		<Card/>
 		<CardCarousel/>
 		<Footer/>	
-		</body>
-</html>
+		<Accordion/>
+  
+	</main>
+</Layout>
+
 

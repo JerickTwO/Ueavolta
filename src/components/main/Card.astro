@@ -1,11 +1,10 @@
 ---
-import SectionContainer from "../../components/footer/SectionContainer.astro";
-import Mechanic from "../icons/speciality/mechanic.astro";
-import Electronic from "../icons/speciality/electronics.astro";
-import Informatic from "../icons/speciality/informatic.astro";
-import General from "../icons/speciality/generalSciences.astro";
-import Electricity from "../icons/speciality/Electricity.astro";
-import Sell from "../icons/speciality/Sell.astro";
+import Mechanic from "@/icons/speciality/mechanic.astro";
+import Electronic from "@/icons/speciality/electronics.astro";
+import Informatic from "@/icons/speciality/informatic.astro";
+import General from "@/icons/speciality/generalSciences.astro";
+import Electricity from "@/icons/speciality/Electricity.astro";
+import Sell from "@/icons/speciality/Sell.astro";
 
 const TAGS = {
     ELECTRONIC: {
@@ -74,7 +73,7 @@ const SPECIALITY = [
 ];
 ---
 
-<SectionContainer
+<article
     class="grid gap-x-10 gap-y-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-16"
 >
     {
@@ -91,4 +90,4 @@ const SPECIALITY = [
         ))
     }
     
-<SectionContainer/>
+<article/>
