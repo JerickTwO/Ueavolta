@@ -1,48 +1,77 @@
 ---
-const data = [
+import Mechanic from "@/icons/speciality/mechanic.astro";
+import Electronic from "@/icons/speciality/electronics.astro";
+import Informatic from "@/icons/speciality/informatic.astro";
+import General from "@/icons/speciality/generalSciences.astro";
+import Electricity from "@/icons/speciality/Electricity.astro";
+import Sell from "@/icons/speciality/Sell.astro";
+
+const TAGS = {
+    ELECTRONIC: {
+        class: "text-[#1A52E6]",
+        icon: Electronic,
+    },
+    MECHANIC: {
+        class: "text-[#1A52E6]",
+        icon: Mechanic,
+    },
+    INFORMATIC: {
+        class: "text-[#1A52E6]",
+        icon: Informatic,
+    },
+    GENERAL: {
+        class: "text-[#1A52E6]",
+        icon: General,
+    },
+    ELECTRICITY: {
+        class: "text-[#1A52E6]",
+        icon: Electricity,
+    },
+    SELL: {
+        class: "text-[#1A52E6]",
+        icon: Sell,
+    },
+};
+
+const SPECIALITY = [
     {
-        title: "Cámaras avanzadas",
-        content: "Toma selfies.Haz películas.Crea sin límites.",
-        img: "https://via.placeholder.com/400x600",
+        title: "Electricidad",
+        icon: [TAGS.ELECTRICITY],
+        content:
+            "Instalar y mantener sistemas eléctricos, incluyendo cableado, iluminación y maquinaria, cumpliendo con los estándares de calidad, seguridad y normativas ambientales .",
     },
     {
-        title: "Chips de Apple",
-        content: "Siente la velocidad.",
-        img: "https://via.placeholder.com/400x600",
+        title: "Electromecánica Automotriz",
+        icon: [TAGS.MECHANIC],
+        content:
+            "Realizar la instalación y mantenimiento de sistemas electrónicos automotrices, incluyendo diagnóstico, control, inyección y encendido, cumpliendo con los estándares.",
     },
     {
-        title: "Batería",
-        content: "Larga vida a la batería.",
-        img: "https://via.placeholder.com/400x600",
+        title: "Electrónica",
+        icon: [TAGS.ELECTRONIC],
+        content:
+            "Realizar la instalación y mantenimiento de sistemas electrónicos, abarcando dispositivos de control, comunicación y automatización, cumpliendo con estándares de .",
     },
     {
-        title: "Innovación",
-        content: "Diseñado para durar.Y enamorar.",
-        img: "https://via.placeholder.com/400x600",
+        title: "Informática",
+        icon: [TAGS.INFORMATIC],
+        content:
+            "Optimizar el tratamiento de la información mediante el procesamiento automático, utilizando lenguajes de programación, bases de datos, herramientas ofimáticas, redes .",
     },
     {
-        title: "Innovación",
-        content: "Diseñado para durar.Y enamorar.",
-        img: "https://via.placeholder.com/400x600",
+        title: "Comercialización y Ventas",
+        icon: [TAGS.SELL],
+        content:
+            "Ejecutar operaciones de almacenamiento y expedición de mercaderías, desarrollo del proceso de venta de productos y/o servicios y la aplicación de técnicas de animación .",
     },
     {
-        title: "Cámaras avanzadas",
-        content: "Toma selfies.Haz películas.Crea sin límites.",
-        img: "https://via.placeholder.com/400x600",
-    },
-    {
-        title: "Chips de Apple",
-        content: "Siente la velocidad.",
-        img: "https://via.placeholder.com/400x600",
-    },
-    {
-        title: "Batería",
-        content: "Larga vida a la batería.",
-        img: "https://via.placeholder.com/400x600",
+        title: "Ciencias Generales",
+        icon: [TAGS.GENERAL],
+        content:
+            "Ofrece una formación en áreas científico-humanísticas, mediante las asignaturas del tronco común, y podrán tener componentes y menciones específicas y especializadas. ",
     },
 ];
 ---
-
 <style>
     .carousel-container {
         scroll-behavior: smooth;
@@ -52,12 +81,30 @@ const data = [
     .carousel-container::-webkit-scrollbar {
         display: none; /* Chrome, Safari, and Opera */
     }
+    .feature-card {
+        transition: transform 0.3s ease-in-out;
+        flex: 0 0 auto; /* Ensure flex cards do not shrink */
+        width: 80%; /* Default width for mobile devices */
+        max-width: 300px; /* Max width for larger screens */
+    }
+    .feature-card:hover {
+        transform: scale(1.05);
+    }
+    .carousel-button {
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(5px);
+        transition: background-color 0.3s;
+    }
+    .carousel-button:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
 </style>
 
-<div id="carousel" class="relative w-full max-w-4xl mx-auto overflow-hidden">
+<div class="relative w-full max-w-6xl mx-auto overflow-hidden">
     <button
         id="prevButton"
-        class="absolute left-2 top-1/2 transform -translate-y-1/2 p-2 bg-gray-800 rounded-full shadow-lg z-10"
+        aria-label="Previous"
+        class="carousel-button absolute left-0 top-1/2 transform -translate-y-1/2 p-2 rounded-full shadow-lg z-10 ml-2"
     >
         <svg
             class="w-6 h-6 text-white"
@@ -74,23 +121,16 @@ const data = [
         </svg>
     </button>
 
-    <div
-        class="carousel-container flex space-x-4 overflow-hidden scroll-smooth w-full"
-    >
+    <div id="carousel" class="carousel-container flex space-x-4 overflow-hidden scroll-smooth w-full px-2 sm:px-6 lg:px-10">
         {
-            data.map(({ title, content, img }) => (
-                <div
-                    class="feature-card bg-gray-800 rounded-lg shadow-lg min-w-[250px] max-w-xs"
-                    {title}
-                >
-                    <img
-                        src={img}
-                        alt={title}
-                        class="w-full h-auto object-cover rounded-t-lg"
-                    />
+            SPECIALITY.map(({ title, icon, content }) => (
+                <div class="feature-card bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 p-4">
+                    {icon.map((tag) => (
+                        <tag.icon class="mb-4 w-10 h-10 my-2" />
+                    ))}
                     <div class="p-4">
-                        <h2 class="text-white font-semibold">{title}</h2>
-                        <p class="text-white text-lg">{content}</p>
+                        <h3 class="text-xl mb-2 font-medium text-black">{title}</h3>
+                        <p class="font-normal text-gray-700">{content}</p>
                     </div>
                 </div>
             ))
@@ -99,7 +139,8 @@ const data = [
 
     <button
         id="nextButton"
-        class="absolute right-2 top-1/2 transform -translate-y-1/2 p-2 bg-gray-800 rounded-full shadow-lg z-10"
+        aria-label="Next"
+        class="carousel-button absolute right-0 top-1/2 transform -translate-y-1/2 p-2 rounded-full shadow-lg z-10 mr-2"
     >
         <svg
             class="w-6 h-6 text-white"
@@ -121,14 +162,28 @@ const data = [
     document.addEventListener("DOMContentLoaded", () => {
         const prevButton = document.getElementById("prevButton");
         const nextButton = document.getElementById("nextButton");
-        const carouselContainer = document.querySelector(".carousel-container");
+        const carouselContainer = document.getElementById("carousel");
 
         prevButton.addEventListener("click", () => {
-            carouselContainer.scrollLeft -= 250; // Ajusta ancho de tarjetas
+            carouselContainer.scrollLeft -= 350; // Adjust width of cards
         });
 
         nextButton.addEventListener("click", () => {
-            carouselContainer.scrollLeft += 250; // Ajustar ancho de tarjetas
+            carouselContainer.scrollLeft += 350; // Adjust width of cards
+        });
+
+        // Swipe functionality
+        let startX, scrollLeft;
+
+        carouselContainer.addEventListener("touchstart", (e) => {
+            startX = e.touches[0].pageX;
+            scrollLeft = carouselContainer.scrollLeft;
+        });
+
+        carouselContainer.addEventListener("touchmove", (e) => {
+            const x = e.touches[0].pageX;
+            const walk = x - startX;
+            carouselContainer.scrollLeft = scrollLeft - walk;
         });
     });
 </script>
