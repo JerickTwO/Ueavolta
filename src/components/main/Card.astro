@@ -8,27 +8,27 @@ import Sell from "@/icons/speciality/Sell.astro";
 
 const TAGS = {
     ELECTRONIC: {
-        class: "text-[#1A52E6]",
+        class: "text-[#000000]",
         icon: Electronic,
     },
     MECHANIC: {
-        class: "text-[#1A52E6]",
+        class: "text-[#000000]",
         icon: Mechanic,
     },
     INFORMATIC: {
-        class: "text-[#1A52E6]",
+        class: "text-[#000000]",
         icon: Informatic,
     },
     GENERAL: {
-        class: "text-[#1A52E6]",
+        class: "text-[#000000]",
         icon: General,
     },
     ELECTRICITY: {
-        class: "text-[#1A52E6]",
+        class: "text-[#000000]",
         icon: Electricity,
     },
     SELL: {
-        class: "text-[#1A52E6]",
+        class: "text-[#000000]",
         icon: Sell,
     },
 };
@@ -74,15 +74,15 @@ const SPECIALITY = [
 ---
 
 <article
-    class="grid gap-x-10 gap-y-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-16"
+    class="grid gap-x-10 gap-y-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 "
 >
     {
         SPECIALITY.map(({ title, icon, content }) => (
-            <div class=" text-blue-600 text-left block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-200 ">
+            <div class=" text-white text-left block max-w-sm p-6 bg-[#11113e] border border-gray-200 rounded-lg shadow hover:bg-slate-900 ">
                 {icon.map((tag) => (
-                    <tag.icon class="mb-4 w-10 h-10 my-2" />
+                    <tag.icon class="text-dark mb-4 w-10 h-10 my-2" />
                 ))}
-                <h3 class="text-xl mb-2 font-medium text-black">{title}</h3>
+                <h3 class="text-xl mb-2 font-medium text-white">{title}</h3>
                 <p class="font-normal text-gray-700 dark:text-gray-400">
                     {content}
                 </p>

@@ -1,0 +1,23 @@
+---
+const metrics = [
+  { value: '+1,134', label: 'Estudiantes', },
+  { value: '+87%', label: 'Ahorro de Tiempo' },
+  { value: '+6', label: 'Especialidades' },
+  { value: '+99.9%', label: 'Estudiantes Satisfechos' }
+];
+---
+
+<div class="flex justify-center">
+  <div class="text-center">
+    <h2 class=" text-white text-3xl lg:text-5xl font-bold mb-2">Contamos con +40 Años de Experiencia </h2>
+    <p class="text-gray-500 text-xl mb-6">A snapshot of our most important numbers.</p>
+    <div class=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 ">
+      {metrics.map(metric => (
+        <div class="bg-gray-900 p-5 lg:py-12 lg:px-11 rounded-lg shadow flex flex-col cursor-pointer items-center hover:text-white  hover:bg-black">
+          <h2 class="text-white text-3xl lg:text-5xl font-bold">{metric.value}</h2>
+          <p class="text-gray-500">{metric.label}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>

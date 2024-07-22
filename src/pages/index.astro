@@ -1,16 +1,19 @@
 ---
 import Card from "@/main/Card.astro";
+import KeyMetrics from '@/main/KeyMetrics.astro';
 import CardCarousel from "@/main/CardCarousel.astro";
 import Accordion from "@/main/Accordion.astro";
-import Footer from "@/Footer.astro";
-import Navbar from "@/Navbar.astro";
-
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Alessandro Volta ">
   <main>
-	<CardCarousel/>
+    <hr class="py-10">
+	  <Card/>
+    <hr class="py-10">  
+    <KeyMetrics />
+    <hr class="py-10">
     <Accordion />
+    <hr class="py-10">
   </main>
 </Layout>

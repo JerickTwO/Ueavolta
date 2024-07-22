@@ -25,7 +25,7 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body
-    class="bg-gray-100 dark:bg-gray-900 mb-2 flex w-full items-center justify-center flex-col"
+    class="bg-gradient-to-t from-slate-900 via-slate-800 to-slate-900  mb-2 flex w-full items-center justify-center flex-col"
   >
     <Navbar />
     <slot />
@@ -35,7 +35,7 @@ const { title } = Astro.props;
     src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"
   ></script>
   </html>
-<style>
+<style is:global>
   * {
     border: 0;
     margin: 0;
@@ -43,5 +43,9 @@ const { title } = Astro.props;
   }
   *::-webkit-scrollbar {
     display: none;
-}
+  }
+  body{
+    background-color: black;
+  }
+
 </style>

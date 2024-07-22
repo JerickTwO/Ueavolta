@@ -28,7 +28,7 @@ const TAGS = {
         icon: Electricity,
     },
     SELL: {
-        class: "text-[#1A52E6]",
+        class: "text-[#ffffff]",
         icon: Sell,
     },
 };
@@ -121,16 +121,16 @@ const SPECIALITY = [
         </svg>
     </button>
 
-    <div id="carousel" class="carousel-container flex space-x-4 overflow-hidden scroll-smooth w-full px-2 sm:px-6 lg:px-10">
+    <div id="carousel" class="carousel-container flex space-x-8 overflow-hidden scroll-smooth w-full px-2 sm:px-6 lg:px-10">
         {
             SPECIALITY.map(({ title, icon, content }) => (
-                <div class="feature-card bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 p-4">
+                <div class="  feature-card hover:bg-gray-900 border [&>div>p]:hover:text-gray-600  rounded-lg shadow text-white bg-[#11113e] p-4">
                     {icon.map((tag) => (
-                        <tag.icon class="mb-4 w-10 h-10 my-2" />
+                        <tag.icon class="mb-3 w-10 h-10 my-2" />
                     ))}
                     <div class="p-4">
-                        <h3 class="text-xl mb-2 font-medium text-black">{title}</h3>
-                        <p class="font-normal text-gray-700">{content}</p>
+                        <h3 class="text-xl mb-2 font-medium ">{title}</h3>
+                        <p class="font-normal text-gray-400">{content}</p>
                     </div>
                 </div>
             ))
