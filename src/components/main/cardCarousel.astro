@@ -75,17 +75,17 @@ const SPECIALITY = [
 <style>
     .carousel-container {
         scroll-behavior: smooth;
-        -ms-overflow-style: none; /* IE and Edge */
-        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; 
+        scrollbar-width: none; 
     }
     .carousel-container::-webkit-scrollbar {
-        display: none; /* Chrome, Safari, and Opera */
+        display: none; 
     }
     .feature-card {
         transition: transform 0.3s ease-in-out;
-        flex: 0 0 auto; /* Ensure flex cards do not shrink */
-        width: 80%; /* Default width for mobile devices */
-        max-width: 300px; /* Max width for larger screens */
+        flex: 0 0 auto; 
+        width: 80%; 
+        max-width: 300px; 
     }
     .feature-card:hover {
         transform: scale(1.05);
@@ -165,14 +165,13 @@ const SPECIALITY = [
         const carouselContainer = document.getElementById("carousel");
 
         prevButton.addEventListener("click", () => {
-            carouselContainer.scrollLeft -= 350; // Adjust width of cards
+            carouselContainer.scrollLeft -= 350; 
         });
 
         nextButton.addEventListener("click", () => {
-            carouselContainer.scrollLeft += 350; // Adjust width of cards
+            carouselContainer.scrollLeft += 350; 
         });
 
-        // Swipe functionality
         let startX, scrollLeft;
 
         carouselContainer.addEventListener("touchstart", (e) => {

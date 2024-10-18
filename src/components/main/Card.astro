@@ -73,21 +73,18 @@ const SPECIALITY = [
 ];
 ---
 
-<article
-    class="grid gap-x-10 gap-y-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 "
->
+<article class="grid gap-x-10 gap-y-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
     {
-        SPECIALITY.map(({ title, icon, content }) => (
-            <div class=" text-white text-left block max-w-sm p-6 bg-[#11113e] border border-gray-200 rounded-lg shadow hover:bg-slate-900 ">
-                {icon.map((tag) => (
-                    <tag.icon class="text-dark mb-4 w-10 h-10 my-2" />
-                ))}
-                <h3 class="text-xl mb-2 font-medium text-white">{title}</h3>
-                <p class="font-normal text-gray-700 dark:text-gray-400">
-                    {content}
-                </p>
-            </div>
-        ))
+      SPECIALITY.map(({ title, icon, content }) => (
+        <div class="text-white text-left block max-w-sm p-6 bg-gray-700 border border-gray-500 rounded-lg shadow-lg hover:bg-gray-700 transition duration-300 ease-in-out">
+          {icon.map((tag) => (
+            <tag.icon class="text-white mb-4 w-12 h-12 my-2 mx-auto" />
+          ))}
+          <h3 class="text-xl mb-2 font-medium text-white">{title}</h3>
+          <p class="font-normal text-gray-400">
+            {content}
+          </p>
+        </div>
+      ))
     }
-    
-<article/>
+  </article>
